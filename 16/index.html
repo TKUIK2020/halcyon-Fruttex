@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Рябикин(SundayOf)</title>
+<meta charset="utf-8" />
+</head>
+<body>
+    <div id="app">
+        <app-a></app-a>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        Vue.component('app-a',{
+            data:function(){
+                return{
+                    visible: false   
+                }
+            }, template: `<div><p v-if="visible"><video width="600" height="600" autoplay = "autoplay" loop = "loop" controls="controls"> <source src="aa.mp4"></video></p><p></p><button v-on:click="visible=!visible">{{visible?'Скрыть':'Показать'}}</button></div>`
+        })
+        var app = new Vue({
+            el: '#app',
+        });
+    </script>
+</body>
+</html>
